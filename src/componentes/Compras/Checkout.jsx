@@ -20,7 +20,7 @@ function Checkout() {
   useEffect(() => {
     const fetchPaymentMethod = async () => {
       try {
-        const response = await fetch('${process.env.REACT_APP_API_URL}/api/users/payment-method', {
+        const response = await fetch(`${process.env.REACT_APP_API_URL}/api/users/payment-method`, {
           headers: {
             'Authorization': `Bearer ${localStorage.getItem('token')}`
           }
@@ -62,7 +62,7 @@ function Checkout() {
       if (response.ok) {
         alert('¡Compra realizada exitosamente!');
         // Redirigir al usuario a la página principal o de juegos
-        navigate('/games');
+        navigate('/prePagina');
       } else {
         const error = await response.json();
         alert(error.message || 'Error al procesar la compra');

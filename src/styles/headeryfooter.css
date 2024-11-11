@@ -181,12 +181,20 @@ footer ul li a:hover {
 
 .social-links {
     display: flex;
-    gap: 15px; /* Espaciado entre los íconos */
+    gap: 20px;
+    align-items: center;
+    justify-content: center;
 }
 
-.social-links img {
-    width: 30px; /* Ajusta el tamaño de los logos */
-    height: auto;
+.social-icon {
+    width: 30px;
+    height: 30px;
+    object-fit: cover;
+    transition: transform 0.2s;
+}
+
+.social-icon:hover {
+    transform: scale(1.1);
 }
 
 @media (max-width: 768px) {

@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from 'react';
+import React from 'react';
 import { Link } from 'react-router-dom';
 import '../styles/headeryfooter.css';
 import instagramlogo from './imagenes/instagramlogo.jpg';
@@ -6,44 +6,6 @@ import twitter from './imagenes/twitter.jpg';
 import youtube from './imagenes/youtube.jpg';
 
 function Footer() {
-  const [socialLinks, setSocialLinks] = useState({
-    twitterURL: '',
-    instagramURL: '',
-    youtubeURL: ''
-  });
-
-  useEffect(() => {
-    // Obtener URLs desde el backend
-    const fetchSocialLinks = async () => {
-      try {
-        const response = await fetch('/social/twitter');
-        const twitterData = await response.json();
-        setSocialLinks((prevState) => ({
-          ...prevState,
-          twitterURL: twitterData.twitterURL
-        }));
-
-        const instagramResponse = await fetch('/social/instagram');
-        const instagramData = await instagramResponse.json();
-        setSocialLinks((prevState) => ({
-          ...prevState,
-          instagramURL: instagramData.instagramURL
-        }));
-
-        const youtubeResponse = await fetch('/social/youtube');
-        const youtubeData = await youtubeResponse.json();
-        setSocialLinks((prevState) => ({
-          ...prevState,
-          youtubeURL: youtubeData.youtubeURL
-        }));
-      } catch (error) {
-        console.error('Error al obtener las URLs de redes sociales:', error);
-      }
-    };
-
-    fetchSocialLinks();
-  }, []);
-
   return (
     <footer>
       <div className="footer-links">
@@ -57,21 +19,15 @@ function Footer() {
       </div>
       <div className="footer-social">
         <div className="social-links">
-          {socialLinks.twitterURL && (
-            <a href={socialLinks.twitterURL} target="_blank" rel="noopener noreferrer">
-              <img src={twitter} alt="Twitter" />
-            </a>
-          )}
-          {socialLinks.instagramURL && (
-            <a href={socialLinks.instagramURL} target="_blank" rel="noopener noreferrer">
-              <img src={instagramlogo} alt="Instagram" />
-            </a>
-          )}
-          {socialLinks.youtubeURL && (
-            <a href={socialLinks.youtubeURL} target="_blank" rel="noopener noreferrer">
-              <img src={youtube} alt="YouTube" />
-            </a>
-          )}
+          <a href="https://twitter.com" target="_blank" rel="noopener noreferrer">
+            <img src={twitter} alt="Twitter" className="social-icon" />
+          </a>
+          <a href="https://instagram.com" target="_blank" rel="noopener noreferrer">
+            <img src={instagramlogo} alt="Instagram" className="social-icon" />
+          </a>
+          <a href="https://youtube.com" target="_blank" rel="noopener noreferrer">
+            <img src={youtube} alt="YouTube" className="social-icon" />
+          </a>
         </div>
       </div>
       <div className="footer-info">

@@ -441,7 +441,10 @@ function UserTab() {
               ) : (
                 wishlist.map(game => (
                   <div key={game.id} className="wishlist-item">
-                    <img src={game.imageUrl} alt={game.name} />
+                    <img 
+                      src={`${process.env.REACT_APP_API_URL}/api/games/${game.id}/image`} 
+                      alt={game.name} 
+                    />
                     <div className="game-info">
                       <p className="game-name">{game.name}</p>
                       <p className="game-price">Precio: ${game.price}</p>

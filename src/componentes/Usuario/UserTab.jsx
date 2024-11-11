@@ -35,7 +35,7 @@ function UserTab() {
   useEffect(() => {
     const fetchUserData = async () => {
       try {
-        const response = await fetch('http://localhost:3000/api/users/profile', {
+        const response = await fetch(`${process.env.REACT_APP_API_URL}/api/users/profile`, {
           headers: {
             'Authorization': `Bearer ${localStorage.getItem('token')}`
           }
@@ -62,7 +62,7 @@ function UserTab() {
   useEffect(() => {
     const fetchWishlist = async () => {
       try {
-        const response = await fetch('http://localhost:3000/api/users/wishlist', {
+        const response = await fetch(`${process.env.REACT_APP_API_URL}/api/users/wishlist`, {
           headers: {
             'Authorization': `Bearer ${localStorage.getItem('token')}`
           }
@@ -109,7 +109,7 @@ function UserTab() {
 
       console.log('Datos a enviar:', userData);
 
-      const response = await fetch('http://localhost:3000/api/users/update-password', {
+      const response = await fetch(`${process.env.REACT_APP_API_URL}/api/users/update-password`, {
         method: 'PUT',
         headers: {
           'Content-Type': 'application/json',
@@ -153,7 +153,7 @@ function UserTab() {
         return;
       }
 
-      const response = await fetch('http://localhost:3000/api/users/update-password', {
+      const response = await fetch(`${process.env.REACT_APP_API_URL}/api/users/update-password`, {
         method: 'PUT',
         headers: {
           'Content-Type': 'application/json',
@@ -202,7 +202,7 @@ function UserTab() {
             return;
         }
 
-        const response = await fetch(`http://localhost:3000/api/users/wishlist/${gameId}/to-cart`, {
+        const response = await fetch(`${process.env.REACT_APP_API_URL}/api/users/wishlist/${gameId}/to-cart`, {
             method: 'POST',
             headers: {
                 'Authorization': `Bearer ${token}`
@@ -225,7 +225,7 @@ function UserTab() {
 
   const reloadWishlist = async () => {
     try {
-      const response = await fetch('http://localhost:3000/api/users/wishlist', {
+      const response = await fetch(`${process.env.REACT_APP_API_URL}/api/users/wishlist`, {
         headers: {
           'Authorization': `Bearer ${localStorage.getItem('token')}`
         }
@@ -255,7 +255,7 @@ function UserTab() {
         cardSecurityCode: paymentData.cvv
       };
 
-      const response = await fetch('http://localhost:3000/api/users/payment-method', {
+      const response = await fetch(`${process.env.REACT_APP_API_URL}/api/users/payment-method`, {
         method: 'PUT',
         headers: {
           'Content-Type': 'application/json',

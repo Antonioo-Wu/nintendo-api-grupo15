@@ -15,7 +15,7 @@ function Carrito() {
   useEffect(() => {
     const fetchCart = async () => {
       try {
-        const response = await fetch('${process.env.REACT_APP_API_URL}/api/cart', {
+        const response = await fetch(`${process.env.REACT_APP_API_URL}/api/cart`, {
           method: 'GET',
           headers: {
             'Authorization': `Bearer ${localStorage.getItem('token')}`,

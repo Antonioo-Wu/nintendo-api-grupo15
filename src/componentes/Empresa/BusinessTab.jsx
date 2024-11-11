@@ -30,7 +30,7 @@ function BusinessTab() {
     // Cargar datos del perfil al montar el componente
     const fetchProfileData = async () => {
       try {
-        const response = await fetch('http://localhost:3000/api/users/profile/business', {
+        const response = await fetch('${process.env.REACT_APP_API_URL}/api/users/profile/business', {
           headers: {
             'Authorization': `Bearer ${localStorage.getItem('token')}`
           }

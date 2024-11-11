@@ -33,7 +33,7 @@ const Catalogo = () => {
       if (filters.maxPrice !== null) queryParams.append('maxPrice', filters.maxPrice);
       if (filters.search.trim() !== '') queryParams.append('search', filters.search);
 
-      const response = await fetch(`http://localhost:3000/api/games?${queryParams}`);
+      const response = await fetch(`${process.env.REACT_APP_API_URL}/api/games?${queryParams}`);
       const data = await response.json();
       setGames(data);
     } catch (error) {

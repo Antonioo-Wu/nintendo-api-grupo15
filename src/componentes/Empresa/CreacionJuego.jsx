@@ -70,7 +70,7 @@ function CreacionVideojuego() {
     }
 
     try {
-      const response = await fetch('http://localhost:3000/api/business/games', {
+      const response = await fetch(`${process.env.REACT_APP_API_URL}/api/business/games`, {
         method: 'POST',
         headers: {
           'Authorization': `Bearer ${localStorage.getItem('token')}`

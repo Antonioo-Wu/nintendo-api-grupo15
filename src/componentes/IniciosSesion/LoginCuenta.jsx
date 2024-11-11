@@ -190,8 +190,10 @@ export const LoginCuenta = () => {
         try {
             const response = await fetch(`${process.env.REACT_APP_API_URL}/api/auth/login`, {
                 method: 'POST',
+                credentials: 'include',
                 headers: {
-                    'Content-Type': 'application/json'
+                    'Content-Type': 'application/json',
+                    'Accept': 'application/json'
                 },
                 body: JSON.stringify({ email, password })
             });
@@ -199,18 +201,13 @@ export const LoginCuenta = () => {
             const data = await response.json();
 
             if (response.ok) {
-                // Guardar token y tipo de usuario
                 localStorage.setItem('token', data.token);
-                
-                // Usar la función login del contexto con el tipo de usuario correcto
                 login(data.userType);
-                
-                // La redirección se maneja automáticamente en el AuthContext
             } else {
-                alert('Credenciales inválidas');
+                throw new Error(data.message || 'Credenciales inválidas');
             }
         } catch (error) {
-            alert('Error al iniciar sesión');
+            alert('Error al iniciar sesión: ' + error.message);
             console.error('Error:', error);
         }
     };

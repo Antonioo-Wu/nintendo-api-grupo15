@@ -58,7 +58,7 @@ const Catalogo = () => {
 
   const handleGameClick = async (gameId, e) => {
     try {
-      await fetch(`http://localhost:3000/api/games/${gameId}/views`, {
+      await fetch(`${process.env.REACT_APP_API_URL}/api/games/${gameId}/views`, {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json'
@@ -185,7 +185,7 @@ const Catalogo = () => {
                 >
                   <Videojuego
                     id={game.id}
-                    image={`http://localhost:3000/api/games/${game.id}/image`}
+                    image={`${process.env.REACT_APP_API_URL}/api/games/${game.id}/image`}
                     title={game.name}
                     price={game.price}
                   />

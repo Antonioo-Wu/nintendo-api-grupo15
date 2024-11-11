@@ -1,0 +1,153 @@
+.infojuego-container {
+  padding: 20px;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.infojuego-content {
+  display: flex;
+  align-items: center;
+  gap: 60px;
+  margin-bottom: 40px;
+}
+
+.infojuego-image-section {
+  flex: 0.5;
+}
+
+.infojuego-image-section img {
+  width: 100%;
+  max-width: 400px;
+  height: auto;
+  border-radius: 10px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+}
+
+.infojuego-details-section {
+  flex: 1;
+}
+
+.game-title {
+  font-size: 28px;
+  font-weight: bold;
+  margin-bottom: 10px;
+}
+
+.category-label {
+  display: inline-block;
+  background-color: #4CAF50;
+  color: white;
+  padding: 5px 12px;
+  border-radius: 15px;
+  font-size: 14px;
+  margin-bottom: 20px;
+}
+
+.price {
+  color: #333;
+  font-size: 24px;
+  font-weight: bold;
+  margin: 15px 0;
+}
+
+.button-group {
+  display: flex;
+  gap: 15px;
+  margin-bottom: 20px;
+}
+
+.btn {
+  padding: 12px 18px;
+  font-size: 16px;
+  cursor: pointer;
+  border: none;
+  border-radius: 5px;
+}
+
+.primary-btn {
+  background-color: #333;
+  color: white;
+}
+
+.secondary-btn {
+  background-color: #333;
+  color: white;
+}
+
+.description-section {
+  margin-top: 20px;
+  padding: 10px;
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  background-color: #f9f9f9;
+}
+
+
+.reviews-section {
+  margin-top: 30px;
+}
+
+.review-entry {
+  background: #f5f5f5;
+  padding: 15px;
+  margin: 10px 0;
+  border-radius: 5px;
+}
+
+.rating {
+  color: gold;
+  font-size: 1.2em;
+  margin-bottom: 5px;
+}
+
+.review-date {
+  color: #666;
+  font-size: 0.9em;
+  margin-top: 5px;
+}
+
+.create-review-btn {
+  display: block;
+  width: 200px;
+  padding: 10px;
+  background-color: #e2172b;
+  color: white;
+  font-size: 16px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  margin: 20px auto;
+  text-align: center;
+}
+
+.create-review-btn:hover {
+  background-color: #a02632;
+}
+
+.text-warning {
+    color: #856404;
+    background-color: #fff3cd;
+    border: 1px solid #ffeeba;
+    padding: 10px;
+    border-radius: 4px;
+    text-align: center;
+    margin: 10px 0;
+}
+
+.back-button {
+    position: absolute;
+    top: 80px;
+    left: 20px;
+    padding: 10px 20px;
+    background-color: #E60012;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 16px;
+    transition: background-color 0.3s;
+}
+
+.back-button:hover {
+    background-color: #cc0010;
+}
